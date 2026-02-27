@@ -3,174 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamePay Rewards - Claim Center</title>
+    <title>GamePay - Giveaway 5 Maret</title>
     <style>
-        :root {
-            --primary: #00f2fe;
-            --success: #25D366;
-            --bg: #0d1117;
-            --card: #161b22;
-            --border: #30363d;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 380px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .header h1 { text-align: center; font-size: 22px; color: var(--primary); margin-bottom: 20px; }
-
-        .btn-tiktok {
-            display: block;
-            text-align: center;
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            border: 2px solid var(--primary);
-        }
-
-        label { display: block; font-size: 11px; color: #8b949e; margin-bottom: 5px; text-transform: uppercase; }
-        
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #0d1117;
-            color: white;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            outline: none;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--success), #128C7E);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-
-        #preview { width: 100%; border-radius: 8px; margin-bottom: 15px; display: none; border: 1px solid var(--border); }
-        #loader { display: none; text-align: center; font-size: 12px; color: var(--primary); margin-bottom: 10px; font-weight: bold; }
+        :root { --primary: #00bfa5; --secondary: #fe2c55; --bg: #0d1117; --card: #161b22; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .card { background: var(--card); padding: 25px; border-radius: 20px; border: 1px solid #30363d; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .logo { color: var(--primary); font-size: 28px; font-weight: 800; margin-bottom: 5px; }
+        .event-info { background: rgba(254, 44, 85, 0.1); border: 1px solid var(--secondary); padding: 10px; border-radius: 10px; margin-bottom: 20px; font-size: 14px; color: var(--secondary); font-weight: bold; }
+        .step { background: #0d1117; padding: 15px; border-radius: 12px; margin-bottom: 15px; text-align: left; border-left: 4px solid var(--primary); }
+        .step strong { display: block; color: var(--primary); margin-bottom: 5px; }
+        input, select { width: 100%; padding: 12px; margin-top: 8px; border-radius: 8px; border: 1px solid #30363d; background: #161b22; color: white; box-sizing: border-box; }
+        .btn { display: block; width: 100%; padding: 14px; border-radius: 10px; font-weight: bold; cursor: pointer; text-decoration: none; border: none; margin-top: 10px; transition: 0.3s; text-align: center; }
+        .btn-tiktok { background: var(--secondary); color: white; }
+        .btn-wa { background: #25D366; color: white; font-size: 16px; margin-top: 20px; }
+        #preview { width: 100%; margin-top: 10px; border-radius: 8px; display: none; border: 1px solid var(--primary); }
+        .note { font-size: 11px; color: #8b949e; margin-top: 10px; line-height: 1.4; text-align: left; background: #21262d; padding: 10px; border-radius: 8px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>GamePay Rewards</h1>
+<div class="card">
+    <div class="logo">GamePay <span style="color:white">Giveaway</span></div>
+    <div class="event-info">🎁 Pengundian: 5 Maret 2026</div>
+
+    <div class="step">
+        <strong>Langkah 1: Follow TikTok</strong>
+        <a href="https://www.tiktok.com/@gamepaymyid" target="_blank" class="btn btn-tiktok">FOLLOW @gamepaymyid</a>
     </div>
 
-    <label>Langkah 1: Wajib Follow</label>
-    <a href="https://www.tiktok.com/@gamepaymyid" target="_blank" class="btn-tiktok">FOLLOW @gamepaymyid</a>
+    <div class="step">
+        <strong>Langkah 2: Data Peserta</strong>
+        <label style="font-size: 12px; color: #8b949e;">Username TikTok</label>
+        <input type="text" id="user" placeholder="@username_kamu">
+        <label style="font-size: 12px; color: #8b949e; display: block; margin-top: 10px;">Nomor HP / WhatsApp</label>
+        <input type="text" id="phone" placeholder="Contoh: 0822xxxx">
+    </div>
 
-    <label>Username TikTok</label>
-    <input type="text" id="username" placeholder="@username_kamu">
+    <div class="step">
+        <strong>Langkah 3: Pilih Foto Bukti</strong>
+        <input type="file" id="fileInput" accept="image/*" onchange="showPreview(event)">
+        <img id="preview">
+        <div class="note">
+            ⚠️ <b>PENTING:</b> Setelah klik tombol hijau, chat WA akan terbuka. Kamu <b>HARUS</b> melampirkan ulang foto screenshot tadi secara manual di chat agar datamu sah!
+        </div>
+        <button onclick="kirimWA()" class="btn btn-wa">DAFTAR VIA WHATSAPP</button>
+    </div>
 
-    <label>Metode Pencairan</label>
-    <select id="metode">
-        <option value="DANA">DANA</option>
-        <option value="GOPAY">GOPAY</option>
-        <option value="BCA">BCA</option>
-        <option value="SEABANK">SEABANK</option>
-    </select>
-
-    <label>Nomor Dana/Rekening</label>
-    <input type="number" id="nomor" placeholder="08xxxx">
-
-    <label>Upload Bukti Follow</label>
-    <input type="file" id="foto_bukti" accept="image/*" onchange="previewFile()">
-    <img id="preview">
-
-    <div id="loader">⏳ Sedang mengunggah bukti ke server...</div>
-    <button onclick="kirimData()" id="btn-kirim" class="btn-submit">KLAIM REWARD SEKARANG</button>
+    <p style="font-size: 10px; color: #8b949e; margin-top: 20px;">© 2026 GamePay Indonesia</p>
 </div>
 
 <script>
-    function previewFile() {
-        const preview = document.getElementById('preview');
-        const file = document.getElementById('foto_bukti').files[0];
-        const reader = new FileReader();
-
-        reader.onloadend = function () {
-            preview.src = reader.result;
-            preview.style.display = "block";
-        }
-
-        if (file) { reader.readAsDataURL(file); }
+    function showPreview(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('preview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
     }
 
-    async function kirimData() {
-        const user = document.getElementById('username').value;
-        const met = document.getElementById('metode').value;
-        const nom = document.getElementById('nomor').value;
-        const fileInput = document.getElementById('foto_bukti');
-        const btn = document.getElementById('btn-kirim');
-        const loader = document.getElementById('loader');
+    function kirimWA() {
+        const user = document.getElementById('user').value;
+        const phone = document.getElementById('phone').value;
+        const file = document.getElementById('fileInput').files[0];
 
-        if (!user || !nom || !fileInput.files[0]) {
-            alert("⚠️ Harap isi Username, Nomor, dan Foto Bukti!");
+        if (!user || !phone || !file) {
+            alert("Lengkapi semua data dan pilih foto bukti!");
             return;
         }
 
-        btn.disabled = true;
-        loader.style.display = "block";
+        const noAdmin = "6282294274058";
+        const pesan = `Halo Admin GamePay!%0A%0ASaya mau daftar Giveaway 5 Maret.%0A%0A*Username:* ${user}%0A*No HP:* ${phone}%0A%0A_Saya akan kirim bukti foto follow setelah pesan ini._`;
 
-        const formData = new FormData();
-        formData.append("image", fileInput.files[0]);
-
-        try {
-            // Menggunakan API Key milik kamu
-            const response = await fetch("https://api.imgbb.com/1/upload?key=c66bae6af4474f68931eb650646a46dc", {
-                method: "POST",
-                body: formData
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                const linkFoto = result.data.url;
-                const noWA = "6282294274058";
-                const teks = `*KLAIM REWARD GAMEPAY*%0A--------------------------%0A*User:* ${user}%0A*Via:* ${met}%0A*No:* ${nom}%0A*Bukti:* ${linkFoto}%0A--------------------------`;
-
-                window.location.href = `https://wa.me/${noWA}?text=${teks}`;
-            } else {
-                alert("Gagal mengunggah foto. Pastikan formatnya gambar (JPG/PNG).");
-            }
-        } catch (error) {
-            alert("Terjadi gangguan jaringan atau API Key bermasalah.");
-        } finally {
-            btn.disabled = false;
-            loader.style.display = "none";
-        }
+        window.open(`https://wa.me/${noAdmin}?text=${pesan}`, '_blank');
     }
 </script>
 
